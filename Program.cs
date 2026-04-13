@@ -3,6 +3,7 @@ using rozliczeniaPIT.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuring database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
