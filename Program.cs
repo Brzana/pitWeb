@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using rozliczeniaPIT.Models;
+using pitWeb.api;
+using pitWeb.Models;
+
+using pitWeb.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Add tax service.
+builder.Services.AddScoped<ITaxService, TaxService>();
 
 var app = builder.Build();
 
@@ -32,5 +38,7 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+
+app.RozliczenieEnpoints();
 
 app.Run();

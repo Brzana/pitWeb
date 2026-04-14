@@ -1,8 +1,8 @@
-﻿using rozliczeniaPIT.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using MiniValidation;
 using Microsoft.AspNetCore.Mvc;
+using pitWeb.Models;
 
 namespace pitWeb.api
 {

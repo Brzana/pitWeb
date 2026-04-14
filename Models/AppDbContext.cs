@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace rozliczeniaPIT.Models
+namespace pitWeb.Models
 {
     public class AppDbContext : DbContext
     {

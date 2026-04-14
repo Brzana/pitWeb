@@ -1,4 +1,4 @@
-namespace rozliczeniaPIT.Models
+namespace pitWeb.Models
 {
     public class RozliczenieModel
     {
