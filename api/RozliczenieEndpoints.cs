@@ -39,6 +39,7 @@ namespace pitWeb.api
             {
                 return Results.BadRequest(errors);
             }
+            model.DataZapisu = DateTime.UtcNow;
             db.Rozliczenia.Add(model);
             await db.SaveChangesAsync();
             return Results.Created($"/api/rozliczenia/{model.Id}", model);
