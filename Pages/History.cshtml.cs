@@ -4,22 +4,21 @@ using pitWeb.Models;
 
 namespace pitWeb.Pages
 {
-    public class IndexModel : PageModel
+    public class HistoryModel : PageModel
     {
         private readonly AppDbContext _context;
 
-        public IndexModel(AppDbContext context)
+        public HistoryModel(AppDbContext context)
         {
             _context = context;
         }
 
-        public List<RozliczenieModel>? RecentDocuments { get; set; }
+        public List<RozliczenieModel>? AllDocuments { get; set; }
 
         public void OnGet()
         {
-            RecentDocuments = _context.Rozliczenia
+            AllDocuments = _context.Rozliczenia
                 .OrderByDescending(r => r.DataZapisu)
-                .Take(5)
                 .ToList();
         }
     }
